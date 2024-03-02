@@ -44,5 +44,6 @@ public class App {
         Path arq = FileSystems.getDefault().getPath("qrcode.png");
 
         MatrixToImageWriter.writeToPath(bitMatrix, "PNG", arq);
+
     }
 }
