@@ -1,7 +1,9 @@
-Abra o prompt de comando do VSCode (i.e. Ctrl + Shift ⇑ + P )
-Digite: create a gradle java project (advanced)
-Escolha: application
-Escolha: groovy
-Escolha: JUnit Jupiter
-Informe o nome do projeto
-Informe o nome do pacote Java para o projeto
+....*...*.
+....*...*.
+........*.
+....*...*.
+....*...*.
+....*...*.
+....*...*.
+....*...*.
+..........
