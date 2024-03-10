@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
+        App resposta = new App();
         Scanner linha = new Scanner(System.in);
         char[][] campo_minado = new char[9][9];
 
@@ -35,21 +36,21 @@ public class App {
                     //Testando posição  x*
                     --aux_1;
                     if (aux_1 >= 0) {
-                        comparacoes(aux,aux_1,campo_minado);
+                        resposta.comparacoes(aux,aux_1,campo_minado);
                     }
                     ++aux_1;
 
                     //Testando posição  *x
                     ++aux_1;
                     if (aux_1 < campo_minado.length) {
-                        comparacoes(aux,aux_1,campo_minado);
+                        resposta.comparacoes(aux,aux_1,campo_minado);
                     }
 
                     //Testando posição  *.
                     //                  .x
                     ++aux;
                     if (aux < campo_minado.length) {
-                        comparacoes(aux,aux_1,campo_minado);
+                        resposta.comparacoes(aux,aux_1,campo_minado);
                     }
                     --aux_1;
 
@@ -58,7 +59,7 @@ public class App {
                     --aux_1;
                     if (aux_1 >= 0) {
                         if (aux < campo_minado.length) {
-                            comparacoes(aux,aux_1,campo_minado);
+                            resposta.comparacoes(aux,aux_1,campo_minado);
                         }
                     }
 
@@ -66,7 +67,7 @@ public class App {
                     //                  x
                     ++aux_1;
                     if (aux < campo_minado.length) {
-                        comparacoes(aux,aux_1,campo_minado);
+                        resposta.comparacoes(aux,aux_1,campo_minado);
                     }
                     --aux;
 
@@ -74,7 +75,7 @@ public class App {
                     //                  *
                     --aux;
                     if (aux >= 0) {
-                        comparacoes(aux,aux_1,campo_minado);
+                        resposta.comparacoes(aux,aux_1,campo_minado);
                     }
 
                     //Testando posição  X.
@@ -82,8 +83,7 @@ public class App {
                     if (aux >= 0) {
                         --aux_1;
                         if (aux_1 >= 0) {
-                            comparacoes(aux,aux_1,campo_minado);
-                        }
+                            resposta.comparacoes(aux,aux_1,campo_minado);                        }
                         ++aux_1;
                     }
                     //Testando posição  .X
@@ -92,7 +92,7 @@ public class App {
                     if (aux >= 0) {
                         ++aux_1;
                         if (aux_1 < campo_minado.length) {
-                            comparacoes(aux,aux_1,campo_minado);
+                            resposta.comparacoes(aux,aux_1,campo_minado);
                         }
                         --aux_1;
                     }
