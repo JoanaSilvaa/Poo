@@ -7,11 +7,13 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+
         Scanner matrix = new Scanner(System.in);
         char[][] d = new char[9][9];
-        //String c = matrix.next();
+
         for (int i = 0; i < 9; i++) {
             String c = matrix.next();
+
             for (int j = 0; j < 9; j++) {
                 d[i][j] = c.charAt(j);
             }
@@ -171,7 +173,8 @@ public class App {
         } else {
             int n = d - '0';
             ++n;
-            return (char) n;
+            d = (char) (n + '0');
+            return d;
         }
     }
 }

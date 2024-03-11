@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         App resposta = new App();
+
         Scanner linha = new Scanner(System.in);
         char[][] campo_minado = new char[9][9];
 
@@ -48,9 +49,11 @@ public class App {
 
                     //Testando posição  *.
                     //                  .x
-                    ++aux;
-                    if (aux < campo_minado.length) {
-                        resposta.comparacoes(aux,aux_1,campo_minado);
+                    if (aux_1 < campo_minado.length ){
+                        ++aux;
+                        if(aux < campo_minado.length) {
+                            resposta.comparacoes(aux, aux_1, campo_minado);
+                        }
                     }
                     --aux_1;
 
@@ -83,7 +86,8 @@ public class App {
                     if (aux >= 0) {
                         --aux_1;
                         if (aux_1 >= 0) {
-                            resposta.comparacoes(aux,aux_1,campo_minado);                        }
+                            resposta.comparacoes(aux,aux_1,campo_minado);
+                        }
                         ++aux_1;
                     }
                     //Testando posição  .X
@@ -99,6 +103,14 @@ public class App {
                     ++aux;
                 }
             }
+
+            for (l = 0; l < campo_minado.length; l++) {
+                for (int c = 0; c < campo_minado.length; c++) {
+                    System.out.print(campo_minado[l][c]);
+                }
+                System.out.println();
+            }
+
         }
     }
 
