@@ -115,8 +115,11 @@ public class App {
     }
 
     public static void comparacoes(int aux,int aux_1,char[][] campo_minado) {
-        if (campo_minado[aux][aux_1] != '*')
-        {
+        if (campo_minado[aux][aux_1] == '.') {
+            campo_minado[aux][aux_1] = '1';
+        } else if (campo_minado[aux][aux_1] == '*') {
+
+        } else {
             if (campo_minado[aux][aux_1] == '1') {
                 campo_minado[aux][aux_1] = '2';
             }
@@ -134,8 +137,6 @@ public class App {
             }
             else if (campo_minado[aux][aux_1] == '7') {
                 campo_minado[aux][aux_1] = '8';
-            } else {
-                campo_minado[aux][aux_1] = '1';
             }
         }
     }
