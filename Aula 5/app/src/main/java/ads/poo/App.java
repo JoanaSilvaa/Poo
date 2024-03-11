@@ -104,13 +104,12 @@ public class App {
                 }
             }
 
-            for (l = 0; l < campo_minado.length; l++) {
-                for (int c = 0; c < campo_minado.length; c++) {
-                    System.out.print(campo_minado[l][c]);
-                }
-                System.out.println();
+        }
+        for (l = 0; l < campo_minado.length; l++) {
+            for (int c = 0; c < campo_minado.length; c++) {
+                System.out.print(campo_minado[l][c]);
             }
-
+            System.out.println();
         }
     }
 
