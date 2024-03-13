@@ -1,59 +1,45 @@
 package poo.ads;
+import java.util.Random;
 
 public class Buzz {
-    private int capaceteRetratil;
-    private int frases;
-    private int dispararLaser;
-    private int braco;
+
+
     private boolean asas;
+    private boolean capaceteRetratil;
+    private String [] frases = {"Oi, eu sou o Buzz Lightyear !", "Embora você tenha tentado acabar comigo, a vingança não é um ideal que promovemos no meu planeta.",
+            "Nunca duvidei de mim mesmo, Comandante, e não vou começar agora!", "Ao infinito e além!", "Comando estrelar", "Não sou um boneco"
+    };
 
-
-    public int abrir(){
-        if (capaceteRetratil == 1){
-            --capaceteRetratil;
-        }
-        else{
-            ++capaceteRetratil;
-        }
+    public boolean isCapaceteAberto(){
         return capaceteRetratil;
     }
 
-    public int laser(){
-        if (dispararLaser == 1){
-            --dispararLaser;
-        }
-        else{
-            ++dispararLaser;
-        }
-        return dispararLaser;
+
+    public String laser(){
+        return "Disparando laser";
     }
 
-
-    public int falar(){
-        if(frases == 0){
-            ++frases;
-            System.out.print("Oi, eu sou o Buzz Lightyear !");
-
-        } else if (frases == 1) {
-            ++frases;
-            System.out.print("Embora você tenha tentado acabar comigo, a vingança não é um ideal que promovemos no meu planeta.");
-
-        } else if (frases == 2){
-            ++frases;
-            System.out.print("Nunca duvidei de mim mesmo, Comandante, e não vou começar agora!");
-
-        } else if (frases == 3) {
-            System.out.print("Nunca duvidei de mim mesmo, Comandante, e não vou começar agora!");
-            ++frases;
-        } else if (frases == 4) {
-            System.out.print("Nunca duvidei de mim mesmo, Comandante, e não vou começar agora!");
-            ++frases;
-        }else if (frases==5){
-            System.out.print("Ao infinito e além!");
-             frases = 0;
-        }
-        return frases;
+    public String braco(){
+        return "Gospeando";
     }
 
+    public boolean abrirCapacete(){
+        capaceteRetratil = ! capaceteRetratil;
+        return capaceteRetratil;
+    }
 
+    public boolean abrirAsas(){
+        this.asas = ! this.asas;
+        if(asas){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public String falar(){
+        Random r = new Random();
+        int i = r.nextInt(6);
+        return frases[i];
+    }
 }
