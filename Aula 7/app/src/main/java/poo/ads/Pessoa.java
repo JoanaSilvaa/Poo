@@ -8,10 +8,16 @@ public class Pessoa {
 
 
     public String toString() {
-        return "Pessoa: " +
-                "nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", email='" + email + '\'';
+        return "Pessoa:\n" +
+                "nome= " + nome +
+                ", cpf= " + cpf +
+                ", email= " +email ;
+    }
+
+    public Pessoa(String nome, String cpf, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
     }
 
     public void setNome(String nome) {
@@ -37,4 +43,5 @@ public class Pessoa {
     public String getEmail() {
         return email;
     }
+
 }

@@ -19,16 +19,29 @@ public class App {
         System.out.println("Capacete aberto? "+ malvado.isCapaceteAberto());
 
 
-        Caneta caneta = new Caneta();
+        Caneta bic = new Caneta("Azul", 20);
+        Caneta pilot = new Caneta("Preta");
 
-        caneta.setCor("Azul");
 
-        Pessoa pessoa = new Pessoa();
 
-        pessoa.setCpf("123.456.789.45");
-        pessoa.setEmail("ehdfieqdfk@gmail.com");
-        pessoa.setNome("Joanma");
+
+        Pessoa pessoa = new Pessoa("Joanma","123.456.789.45","ehdfieqdfk@gmail.com");
+
+        //pessoa.setCpf("123.456.789.45");
+        //pessoa.setEmail("ehdfieqdfk@gmail.com");
+        //pessoa.setNome("Joanma");
 
         System.out.println(pessoa);
+
+        Carro formula1 = new Carro();
+
+        formula1.acelerador(140);
+
+        System.out.println(formula1.obterVelocidade());
+
+        formula1.acelerador(30);
+
+        System.out.println(formula1.obterVelocidade());
+
     }
 }
