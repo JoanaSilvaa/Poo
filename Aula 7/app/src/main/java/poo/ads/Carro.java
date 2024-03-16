@@ -20,8 +20,14 @@ public class Carro {
         return velocidade;
     }
 
-    public void setVelocidade(int velocidade) {
-        this.velocidade = velocidade;
+    public int setVelocidade(int velocidade) {
+        if ((velocidade < 0) && (velocidade >200)){
+            velocidade = 0 ;
+        }
+        else {
+            velocidade = velocidade;
+        }
+        return velocidade;
     }
 
     //métodos
