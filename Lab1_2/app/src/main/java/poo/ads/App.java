@@ -3,12 +3,17 @@
  */
 package poo.ads;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        Horario h = new Horario(00,20,1);
+        Horario v = new Horario(30,20,1);
+
+        System.out.println(h.toString());
+
+        System.out.println(v.subtracaoHora(h));
+
+        System.out.println(h.extenso(h));
     }
 }
