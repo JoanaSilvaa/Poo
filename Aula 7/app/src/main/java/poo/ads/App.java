@@ -1,7 +1,17 @@
 package poo.ads;
 
 public class App {
+
+
+    private String nome = "ADS";
     public static void main(String[] args) {
+
+        App a = new App();
+
+        System.out.println(a.nome); //quando não é estatico precisa colocar a classe antes do metodo
+
+        //static usa todas os pessoas por exemplo
+
         Buzz buzz = new Buzz();
 
         System.out.println(buzz.falar());
@@ -19,7 +29,7 @@ public class App {
         System.out.println("Capacete aberto? "+ malvado.isCapaceteAberto());
 
 
-        Caneta bic = new Caneta("Azul", 20);
+        Caneta bic = new Caneta("Azul", 20); //
         Caneta pilot = new Caneta("Preta");
 
 
@@ -42,6 +52,8 @@ public class App {
         formula1.acelerador(30);
 
         System.out.println(formula1.obterVelocidade());
+
+        Math.sqrt(4); //Raiz de 4
 
     }
 }

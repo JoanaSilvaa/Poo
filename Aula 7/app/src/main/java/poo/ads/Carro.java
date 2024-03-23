@@ -7,6 +7,8 @@ public class Carro {
     //velocidade maxima = 200
     //velocidade minima = 0
 
+    private final int VEL_MAX = 200;
+
 
     public Carro(int velocidade) {
         this.velocidade = velocidade;
@@ -21,7 +23,7 @@ public class Carro {
     }
 
     public int setVelocidade(int velocidade) {
-        if ((velocidade < 0) && (velocidade >200)){
+        if ((velocidade < 0) && (velocidade > VEL_MAX)){
             velocidade = 0 ;
         }
         else {
@@ -32,11 +34,11 @@ public class Carro {
 
     //métodos
     public int acelerador(int v){
-        if ((velocidade+v) <= 200){
+        if ((velocidade+v) <= VEL_MAX){
             velocidade+=v;
             return velocidade;
         }
-        velocidade = 200;
+        velocidade = VEL_MAX;
         return velocidade;
     }
     public int freiar(int v){

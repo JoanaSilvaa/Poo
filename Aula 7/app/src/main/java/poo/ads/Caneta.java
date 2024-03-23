@@ -5,7 +5,9 @@ public class Caneta {
     private String cor;
     private int tinta;
 
-    public Caneta(String cor, int tinta) {
+    private final String MARCA = "bic"; //Constatnte não pode ser alterada
+
+    public Caneta(String cor, int tinta) { //metodo construtor, não possui retorno e tem que ter o mesmo nome que a classe
         this.cor = cor;
         this.tinta = tinta;
     }
