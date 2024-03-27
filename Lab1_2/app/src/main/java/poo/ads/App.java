@@ -7,12 +7,12 @@ package poo.ads;
 public class App {
     public static void main(String[] args) {
 
-        Horario h = new Horario(00,20,1);
-        Horario v = new Horario(30,20,1);
+        Horario h = new Horario(23,25,2);
+        Horario v = new Horario(20,20,1);
 
         System.out.println(h.toString());
 
-        System.out.println(v.subtracaoHora(h));
+        System.out.println(h.subtracaoHora(v));
 
         System.out.println(h.extenso(h));
     }
