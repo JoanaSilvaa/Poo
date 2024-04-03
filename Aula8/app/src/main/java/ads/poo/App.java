@@ -32,7 +32,7 @@ public class App {
         draw.setPenColor(Color.RED);
         draw.text(400,300, "Joana");
 
-        draw.picture(400,300, "IMAGEM.jpg");
+        //draw.picture(400,300, "IMAGEM.jpg");
 
 
 
