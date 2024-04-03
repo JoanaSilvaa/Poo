@@ -2,31 +2,29 @@ package poo.ads;
 
 public class Horario {
 
-    private String [] dezena = {"Zero","Dez","Vinte","Trinta", "Quarenta","Cinquenta"};
-    private String [] unidade = {"zero","um","dois","tres", "quatro","cinco","seis", "sete","oito","nove"};
-    private String [] unidadeHora = {"zero","uma","duas","tres", "quatro","cinco","seis", "sete","oito","nove"};
+    private static final String [] dezena = {"Zero","Dez","Vinte","Trinta", "Quarenta","Cinquenta"};
+    private static final String [] unidade = {"zero","um","dois","tres", "quatro","cinco","seis", "sete","oito","nove"};
+    private static final String [] unidadeHora = {"zero","uma","duas","tres", "quatro","cinco","seis", "sete","oito","nove"};
+
     private int hora;
     private int segudos;
     private int minutos;
-
     private final int MIN = 00;
 
 
     public Horario(int hora, int minutos, int segudos) {
-        this.hora=0;
-        this.minutos=0;
-        this.segudos=0;
-        this.setHora(hora);
-        this.setMinutos(minutos);
-        this.setSegudos(segudos);
+        if (!this.setHora(hora) || !this.setMinutos(minutos) || this.setSegudos(segudos)){
+            this.hora=MIN;
+            this.minutos=MIN;
+            this.segudos=MIN;
+        }
+    }
+    public Horario(int hora) {
+        this(hora,0,0);
     }
 
     public Horario(int hora, int minutos) {
-        this.hora=0;
-        this.minutos=0;
-        this.segudos=0;
-        this.setHora(hora);
-        this.setMinutos(minutos);
+        this(hora,minutos,0);
     }
 
     public Horario() {
@@ -67,7 +65,9 @@ public class Horario {
     }
 
     public String extenso(Horario s){
+
         int auxH, aux1H,auxM, aux1M, auxS, aux1S;
+
         auxH = s.hora/10;
         aux1H = s.hora % 10;
         auxM = s.minutos/10;
@@ -75,21 +75,26 @@ public class Horario {
         auxS = s.segudos/10;
         aux1S = s.segudos % 10;
 
-        return    ((auxH>0)? dezena[auxH] + " e " : " " )+ ((aux1H==1)? unidadeHora[aux1H] + " hora, " : unidadeHora[aux1H] + " horas, ")
-                + ((auxM>0) ?dezena[auxM] + " e ": " e ") +((aux1M==1)?unidade[aux1M] + " minuto " : unidade[aux1M] + " minutos ")
-                + ((auxS>0) ?dezena[auxS] + " e ": " e ") + ((aux1S==1)? unidade[aux1S] + " segundo" : unidade[aux1S] + " segundos" );
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(((auxH>0)? dezena[auxH] + " e " : " " )+ ((aux1H==1)? unidadeHora[aux1H] + " hora, " : unidadeHora[aux1H] + " horas, "));
+        sb.append(((auxM>0) ?dezena[auxM] + " e ": " e ") +((aux1M==1)?unidade[aux1M] + " minuto " : unidade[aux1M] + " minutos "));
+        sb.append(((auxS>0) ?dezena[auxS] + " e ": " e ") + ((aux1S==1)? unidade[aux1S] + " segundo" : unidade[aux1S] + " segundos" ));
+
+        return sb.toString();
+
+        /*
+        ((auxH>0)? dezena[auxH] + " e " : " " )+ ((aux1H==1)? unidadeHora[aux1H] + " hora, " : unidadeHora[aux1H] + " horas, ")
+        + ((auxM>0) ?dezena[auxM] + " e ": " e ") +((aux1M==1)?unidade[aux1M] + " minuto " : unidade[aux1M] + " minutos ")
+        + ((auxS>0) ?dezena[auxS] + " e ": " e ") + ((aux1S==1)? unidade[aux1S] + " segundo" : unidade[aux1S] + " segundos" );
+         */
     }
 
     public int totalSegundos(){
-        int resultado;
-        resultado = this.segudos + (this.minutos * 60) + (this.hora * 3600);
-        return resultado;
+        return this.segudos + (this.minutos * 60) + (this.hora * 3600);
     }
 
     public double subtracaoHora(Horario s){
-        double resultado, resultado2;
-        resultado = s.segudos + (s.minutos * 60) + (s.hora * 3600);
-        resultado2 = totalSegundos();
-        return resultado2 - resultado;
+        return totalSegundos() - s.totalSegundos();
     }
 }
