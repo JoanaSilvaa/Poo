@@ -30,7 +30,7 @@ public class App {
         draw.setYscale(0,600);
 
         draw.setPenColor(Color.RED);
-        draw.text(400,300, "Joana");
+        //draw.text(400,300, "Joana");
 
         //draw.picture(400,300, "IMAGEM.jpg");
 
