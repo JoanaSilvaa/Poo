@@ -1,0 +1,26 @@
+package ads.poo;
+
+import java.util.ArrayList;
+
+public class Livro {
+    private  String titulo;
+    private  Double preco;
+    private  ArrayList<Autor>autores;
+    private  String isbn; //13
+
+
+    public Livro(String isbn, ArrayList<Autor> autores, Double preco, String titulo) {
+        this.titulo = titulo;
+        this.autores = autores;
+        this.preco = preco;
+        this.isbn = isbn;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+}
