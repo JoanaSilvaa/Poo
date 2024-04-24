@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class AppLivraria {
     public static void main(String[] args) {
 
-        HashMap<String,Livro> banco = new HashMap<>();
+        HashMap<String, Livro> banco = new HashMap<>();
 
 
         ArrayList<Autor> autores = new ArrayList<>();
@@ -20,8 +20,15 @@ public class AppLivraria {
         Livro livro2 = new Livro("3678952366945",autoresl1, 1295.3, "cenoura");
         banco.put(livro2.getIsbn(),livro2);
 
-        //depois do livro criado adicionar autor
+        if (!banco.containsKey(livro1.getIsbn())){
+            banco.put(livro1.getIsbn(),livro1);
+        }
 
+        Livro l = banco.get("1234567891236");
+        if (l != null){
+            Autor outro = new Autor("junio", "br");
+            l.addAutor(outro);
+        }
 
     }
 }

@@ -23,4 +23,20 @@ public class Livro {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        for (Autor autor :  this.autores){
+            sb.append(autor);
+        }
+        return String.format("Isbn: %s, Titulo %s, preço %d, autores:\n" +
+                "%s", isbn, titulo,preco,sb);
+    }
+
+    public boolean addAutor(Autor a){
+        return this.autores.add(a);
+    }
+
 }
