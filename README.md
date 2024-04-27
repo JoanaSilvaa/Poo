@@ -16,3 +16,21 @@ git commit -m "aaaa"
 
 
 git push
+
+## UML:
+dpkg -x StarUML_6.1.0_amd64.deb staruml
+
+
+cd staruml/opt/StarUML/
+
+
+Para executar: ./staruml
+
+
+ou
+
+
+cd staruml/
+
+
+./opt/StarUML/ --no-sandbox &
