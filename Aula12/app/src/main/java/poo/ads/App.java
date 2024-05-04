@@ -4,11 +4,94 @@
 package poo.ads;
 
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class App {
 
+    private int menu(){
+
+        System.out.println("Agenda telefonica");
+        System.out.println("1 - Adicionar contato");
+        System.out.println("2 - Remover contato");
+        System.out.println("3 - Atualizar contato");
+        System.out.println("4 - Listar dados de um contato");
+        System.out.println("5 - Listar dados de todos os contatos");
+        System.out.println("6 - Sair");
+
+        Scanner teclado = new Scanner(System.in);
+        int opcao = teclado.nextInt();
+        teclado.nextLine();
+
+        return opcao;
+    }
+
+
     public static void main(String[] args) {
+        App app = new App();
+
         Agenda agenda = new Agenda();
 
+        int opcao;
 
-           }
+        do{
+            opcao = app.menu();
+            switch (opcao){
+
+                case 1 -> {
+                    System.out.println("Nome do contato: ");
+                    Scanner teclado = new Scanner(System.in);
+                    String nome = teclado.nextLine();
+                    System.out.println("Sobrenome do contato: ");
+                    String sobrenome = teclado.nextLine();
+                    System.out.println("Data de nascimento do contato: ");
+                    String dataNascimento = teclado.nextLine();
+
+                    Contato cont = new Contato(LocalDate.parse(dataNascimento),nome,sobrenome);
+                    agenda.adiciona(cont);
+
+                    System.out.println("Numero do telefone: ");
+                    String telefone = teclado.nextLine();
+                    System.out.println("Rotulo do telefone: ");
+                    String rotulo = teclado.nextLine();
+                    agenda.adicionaTelefone(rotulo,telefone,cont);
+
+                    System.out.println("e-mail do contato: ");
+                    String email = teclado.nextLine();
+                    System.out.println("Rotulo do e-mail: ");
+                    rotulo = teclado.nextLine();
+
+                    agenda.adicionaEmail(email,rotulo,cont);
+                }
+                case 2 -> {
+                    System.out.println("Nome do contato: ");
+                    Scanner teclado = new Scanner(System.in);
+                    String nome = teclado.nextLine();
+                    System.out.println("Sobrenome do contato: ");
+                    String sobrenome = teclado.nextLine();
+                    agenda.removeContato(nome,sobrenome);
+                }
+                case 3 -> {
+
+                }
+                case 4 -> {
+                    System.out.println("Nome do contato: ");
+                    Scanner teclado = new Scanner(System.in);
+                    String nome = teclado.nextLine();
+                    for (Contato elemento : agenda.contatos) {
+                        if (elemento.getNome().equals(nome)) {
+                            elemento.toString();
+                        }
+                    }
+                }
+                case 5 -> System.out.println(" ");
+                case 6 -> {
+                    System.out.println("Saindo do SIGAA 2...");
+                    break;
+                }
+                default -> System.out.print("Opção inválida");
+            }
+        }while (opcao != 6);
+
+    }
 }

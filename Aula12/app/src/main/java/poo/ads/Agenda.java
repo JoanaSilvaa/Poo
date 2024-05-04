@@ -3,10 +3,10 @@ package poo.ads;
 import java.util.ArrayList;
 
 public class Agenda {
-    ArrayList<Contato>contatos;
+    ArrayList <Contato> contatos;
 
     public Agenda() {
-        ArrayList<Contato>contatos = new ArrayList<>();
+        contatos = new ArrayList<>();
     }
 
     public boolean adiciona(Contato c){
