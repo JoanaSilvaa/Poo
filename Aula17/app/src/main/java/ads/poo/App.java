@@ -4,11 +4,19 @@
 package ads.poo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        Arqueiro arqueiro = new Arqueiro(3);
+        Cavaleiro cavaleiro = new Cavaleiro("escudo");
+        Aldeao aldeao = new Aldeao("faca");
+
+        System.out.println(aldeao.mover());
+
+
+
+
+
+
+
     }
 }
