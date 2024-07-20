@@ -21,6 +21,6 @@ public class Cavaleiro extends Personagem {
     }
 
     public String atacar() {
-        return super.atacar() + "Cavaleiro atacou";
+        return "Cavaleiro atacou";
     }
 }

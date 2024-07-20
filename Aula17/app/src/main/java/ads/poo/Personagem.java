@@ -1,6 +1,6 @@
 package ads.poo;
 
-public class Personagem {
+public abstract class Personagem {
     private int vida;
     private int ataque;
     private double velocidade;
@@ -15,9 +15,6 @@ public class Personagem {
         return "Estou me movendo";
     }
 
-    public String atacar(){
-        return "Estou atacando";
-    }
 
     public int getVida() {
         return vida;

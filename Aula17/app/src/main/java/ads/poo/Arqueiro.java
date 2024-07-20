@@ -14,12 +14,12 @@ public class Arqueiro extends Personagem {
 
 
     public String mover() {
-        return super.mover() + "O arqueiro está se movendo";
+        return mover() + "O arqueiro está se movendo";
     }
 
-    @Override
+
     public String atacar() {
-        return super.atacar() + "O arqueiro está se movendo";
+       return  "O arqueiro está se movendo";
     }
 
     public void setFlechas(int flechas) {

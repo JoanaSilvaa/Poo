@@ -2,7 +2,9 @@ package ads.poo;
 
 import java.util.ArrayList;
 
-public class Aldeao extends Personagem {
+public class Aldeao extends Personagem implements Guerreiro, Coletador {
+
+
     private ArrayList<String>ferramentas = new ArrayList<>();
 
     public Aldeao(String ferramenta) {
@@ -26,6 +28,6 @@ public class Aldeao extends Personagem {
 
 
     public String atacar() {
-        return super.atacar()+ "O Aldeao está atacando";
+        return "O Aldeao está atacando";
     }
 }

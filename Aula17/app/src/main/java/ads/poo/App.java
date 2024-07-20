@@ -12,6 +12,8 @@ public class App {
 
         System.out.println(aldeao.mover());
 
+        Soldado s = new Soldado(5,6,10);
+
 
 
 
